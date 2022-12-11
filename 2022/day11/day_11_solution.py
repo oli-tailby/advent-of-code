@@ -72,7 +72,7 @@ def run_round(monkeys, worry_div, mod_lcm):
 
     return monkeys
 
-def items_inspected_n_rounds(filename, n_rounds, top_n=2, worry_div=True):
+def monkey_business(filename, n_rounds, top_n=2, worry_div=True):
     monkeys = read_input(filename)
     mod_lcm = list_product([m.test for m in monkeys]) # using product as all primes - can be improved!
 
@@ -83,5 +83,5 @@ def items_inspected_n_rounds(filename, n_rounds, top_n=2, worry_div=True):
     insp = sorted([m.inspections for m in monkeys], reverse=True)
     return list_product(insp[:2])
 
-items_inspected_n_rounds('input.txt', 20)
-items_inspected_n_rounds('input.txt', 10000, worry_div=False)
+monkey_business('input.txt', 20)
+monkey_business('input.txt', 10000, worry_div=False)
